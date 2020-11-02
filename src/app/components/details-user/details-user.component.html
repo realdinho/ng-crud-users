@@ -1,1 +1,66 @@
-<p>details-user works!</p>
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentUser" class="edit-form">
+    <h4>Update User</h4>
+    <form>
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          [(ngModel)]="currentUser.first_name"
+          name="firstName"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          [(ngModel)]="currentUser.last_name"
+          name="lastName"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          [(ngModel)]="currentUser.email"
+          name="email"
+        />
+      </div>
+      <!-- <div class="form-group">
+        <label for="job">Job:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="job"
+          [(ngModel)]="currentUser.job"
+          name="job"
+        />
+      </div> -->
+
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteUser()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success"
+      (click)="updateUser()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentUser">
+    <br />
+    <p>Cannot access this user...</p>
+  </div>
+</div>

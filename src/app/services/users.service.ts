@@ -15,19 +15,19 @@ export class UsersService {
     return this.http.get(`${baseUrl}?page=2`);
   }
 
-  get(id): Observable<User> {
-    return this.http.get<User>(`${baseUrl}/${id}`);
+  get(id): Observable<any> {
+    return this.http.get(`${baseUrl}/${id}`);
   }
 
-  create(data): Observable<User> {
-    return this.http.post<User>(baseUrl, data);
+  create(data): Observable<any> {
+    return this.http.post(baseUrl, data);
   }
 
-  update(id, data): Observable<User> {
-    return this.http.put<User>(`${baseUrl}/${id}`, data);
+  update(id, data): Observable<any> {
+    return this.http.put(`${baseUrl}/${id}`, data);
   }
 
-  delete(id): Observable<User> {
-    return this.http.delete<User>(`${baseUrl}/${id}`);
+  delete(id): Observable<any> {
+    return this.http.delete(`${baseUrl}/${id}`);
   }
 }
