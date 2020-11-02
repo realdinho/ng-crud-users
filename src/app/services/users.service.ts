@@ -11,8 +11,8 @@ const baseUrl = 'https://reqres.in/api/users';
 export class UsersService {
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<User> {
-    return this.http.get<User>(`${baseUrl}?page=2`);
+  getAll(): Observable<any> {
+    return this.http.get(`${baseUrl}?page=2`);
   }
 
   get(id): Observable<User> {

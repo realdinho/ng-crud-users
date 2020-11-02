@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -8,7 +7,10 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-  user: User;
+  user = {
+    name: '',
+    job: ''
+  };
   submitted = false;
 
   constructor(private usersService: UsersService) { }
@@ -16,9 +18,9 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveUser() {
+  saveUser(): void {
     const data = {
-      name: this.user.first_name + ' ' + this.user.last_name,
+      name: this.user.name,
       job: this.user.job
     };
 
@@ -37,9 +39,7 @@ export class AddUserComponent implements OnInit {
   newUser(): void {
     this.submitted = false;
     this.user = {
-      first_name: '',
-      last_name: '',
-      email: '',
+      name: '',
       job: ''
     };
   }

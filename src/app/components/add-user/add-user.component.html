@@ -8,12 +8,12 @@
           class="form-control"
           id="firstName"
           required
-          [(ngModel)]="user.first_name"
+          [(ngModel)]="user.name"
           name="firstName"
         />
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="lastName">Last Name:</label>
         <input
           type="text"
@@ -34,7 +34,7 @@
           [(ngModel)]="user.email"
           name="email"
         />
-      </div>
+      </div> -->
 
       <div class="form-group">
         <label for="job">Job:</label>
@@ -51,7 +51,7 @@
     </div>
 
     <div *ngIf="submitted">
-      <h4>You submitted successfully!</h4>
+      <h4>User submitted successfully!</h4>
       <button class="btn btn-success" (click)="newUser()">Add</button>
     </div>
   </div>
